@@ -1,0 +1,2 @@
+# Emertxe
+Shell Scripting 
