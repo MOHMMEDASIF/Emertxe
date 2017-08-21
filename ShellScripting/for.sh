@@ -1,10 +1,16 @@
-
-#This program is an simple example of for loop
+#This program is an simple example of for-loop
 
 #!/bin/bash
 
+#---------------------------------------------------------------- for-loop Syntax---------------------------------------------------------------------------
+#	for(( initializing ; condition ; increment statement ))
+#	do
+#		statement
+#	done
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#for(( initializing ; condition ; increment statement ))
+
+
 
 for(( i=0 ;i<=5 ; i++))
 do
