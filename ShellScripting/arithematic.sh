@@ -26,7 +26,7 @@ ExpectedOutput
 
 #!/bin/bash
 
-
+source exit.sh
 
 #below statement validates the count of the argument
 if [ "$#" -eq 3 ]
@@ -55,13 +55,19 @@ esac
 
 
 #prints the result in the terminal with oppropriate message
-echo "Arithematic operation performed is $operant"
-echo "Therefore $operator1$operant$operator2=$result"
+echo -e "[OUTPUT] Arithematic operation performed is \" $operant\" [OUTPUT]"
+echo "[OUTPUT] Therefore $operator1$operant$operator2=$result [OUTPUT]"
+
+else	
+	echo -e "\n\n\n[Error]Invalid Input[Error]"
+	echo "Pass an Argument to perform the operation"
+	echo -e  "[syntax]bash filename.sh 1 + 3 [syntax]\n\n"
+fi
 
 
 
-
-
+exit_program arithematic.sh
+<<comment
 
 #prompt the user to continue or to exit and read the value of the user in a variable
 #<<doubt
@@ -91,7 +97,7 @@ else
 fi
 
 
-
+comment
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------End of the program -------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
