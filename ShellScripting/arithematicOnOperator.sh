@@ -26,11 +26,33 @@ ExpectedOutput
 #import the exit.sh file to perform exit operation
 source exit.sh
 
+echo "[INPUT]Enter the value[INPUT]"
+read value
 
 
+declare -a inputArray=("$value")
+echo "value is $inputArray"
+countOfOperant=${#inputArray["$@"]}
+echo "count of  operant is $countOfOperant"
+echo "1st value ${inputArray[0]}"
+operant=${inputArray[$countOfOperant-1]}
+echo "operant $operant"
+
+sum=0
+
+<<comme
+case "$operant" in
+	"+")	;;
+	"-")	;;
+	"*")	;;
+	"/")	;;
+	"%")	;;
+	  *)	echo "[ERROR]invalid operant[ERROR]"
+esac
+comme
 
 #calling a function from " exit.sh" file
-exit_program presentFilename.sh
+exit_program arithematicOnOperation.sh
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #----------------------------------------------------------End of the Program-------------------------------------------------------------------------------
