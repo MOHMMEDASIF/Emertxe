@@ -1,18 +1,19 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------Expected Solution-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
-#This Program Takes an input[Number] from an user and prints it in reverse order
+#This program calculates the Length of the given string as input to this file 
 
 <<ExpectedInput
-	[example] if n is: 12345
-	
+
+	Example:	./filename.sh hello world
 
 
 
 ExpectedInput
 
 <<ExpectedOutput
-	[example] then reverse of n is: 54321
+	Example:	Length of the String(hello)=5
+			Length of the String(world)=5
 
 
 
@@ -25,43 +26,27 @@ ExpectedOutput
 
 #!/bin/bash
 
-#imported file that performes exit operation after the program is executed
-source exit.sh 
+#import the exit.sh file to perform exit operation
+source exit.sh
 
-
-#prompt the user to get the value and store it in the variable inputNumber
-clear
-echo -e "\t\t\t**********\tEnter the value that is need to be reversed\t**********"
-read  inputNumber
-
-dummyInput=$inputNumber
-reverseFinalResult=0
-
-
-#validate whether the given input is number else throw an error
-if [ $inputNumber -gt 0 ]
-then
-	while [ $dummyInput -gt 0 ]
-	do 
-
-		remainder=$(($dummyInput%10))	#captures the remainder of the input for each iteration
-		reverseFinalResult=$(($reverseFinalResult*10+$remainder))	#addeds tens value before adding remainder in th Reverseresult
-		dummyInput=$(($dummyInput/10))	#removes the last number in  the input value  
-			
+if [ $# -gt 0 ]
+then 
+	declare -a array=("$@")
+	echo "[OUTPUT] Sting length of given values [OUTPUT]"
+	for((i=0;i<$#;i++))
+	do
+		echo "Length of the String(${array[i]})=${#array[i]}"
 	done
- 	echo "[OUTPUT]Reversed value of $inputNumber is : $reverseFinalResult[OUTPUT]"
-
-
+	exit_program stringLength.sh	
 else
-	echo -e "\t\t\t**********\t\tplease give a valid input to perform an operation\t\t**********\t\t\t"
+	echo "[ERROR]Pass an Argument to perform an Operation[ERROR]"
+	exit_program stringLength.sh
 
 
+
+#calling a function from " exit.sh" file
+#exit_program stringLength.sh
 fi
-
-#Calling a function from " exit.sh" file
-exit_program reverse.sh 
-
-
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #----------------------------------------------------------End of the Program-------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -44,7 +44,7 @@ case "$operant" in
 	"+") result=`echo "$operator1 + $operator2" | bc`;;
 	"-") result=`echo "$operator1 - $operator2" | bc`;;
 	"/") result=`echo "$operator1 / $operator2" | bc`;;
-	"*") result=`echo "$operator1 * $operator2" | bc`;;
+	"x") result=`echo "$operator1 * $operator2" | bc`;;
 	"%") result=`echo "$operator1 % $operator2" | bc`;;
 	*)   echo "Invalid operant "
 	     echo " Try with new operant" 

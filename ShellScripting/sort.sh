@@ -1,23 +1,25 @@
+#!/bin/bash
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------Expected Solution-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
-#This Program performes fibonacci operation(i.e, adds last two number to find third number) "if a[0]=0 a[1]=1 then a[2] should have 0+1=1 as content". 
-
-
+#This Program performs both Ascending and Descending sort operation 
 <<ExpectedInput
 
-	Example:	Enter the value of N
-			5
+	example:	./sort.sh 5 4 6 2 3 8 9 7 1
+			1. Ascending
+			2. Descending
+			Please select an option: 1
+
 
 
 
 ExpectedInput
 
 <<ExpectedOutput
-
-	Example:	fibonacci Series of an Given Number:
-			0 1 1 2 3 5
-
+	example(1):	if option is 1 then
+			Sorted array is 1 2 3 4 5 6 7 8 9
+	example(2):	if option is 2 then 
+			Sorted array is 9 8 7 6 5 4 3 2 1
 
 ExpectedOutput
 
@@ -26,35 +28,62 @@ ExpectedOutput
 #------------------------------------------------------------Begining of the Program------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#!/bin/bash
 
 #import the exit.sh file to perform exit operation
 source exit.sh
 
-#read the number from the user and perform Fibonacci series operation
-echo "[INPUT]Enter the value of N[INPUT]"
-read n
-
-#validate the input wheather the input is Number or character
-if [ $n -gt 0 ]
+if [ $# -gt 2 ] 
 then
-	declare -a array=( 0 1 )
-	for ((i=2;i<=n;i++))
+	declare -a inputValue=("$@")
+	echo "inputcount : ${#inputValue[@]}"
+	echo "content of inputValue ${inputValue[@]}"
+	
+	for((j=0; j<=${#inputValue[@]}; j++))
 	do
-		array[i]=$((${array[i-2]} + ${array[i-1]})) 	#performs the adding operation with last two numbers(Example:a[2]=a[1]+a[0])
+		for((i=$(($j+1)); i<${#inputValue[@]}; i++))
+		do
+
+			if [  ${inputValue[j]} -gt  ${inputValue[i]} ] 
+			then
+				temp=${inputValue[$j]}
+				inputValue[$j]=${inputValue[$i]}
+				inputValue[$i]=$temp
+			fi 
+		done
+
 	done
-	echo "[OUTPUT]Fibonacci series of Given Number is:[OUTPUT]"
-	echo "${array[@]}"	#prints the entire values of an array
+	echo "[Input]Enter your choice[Input]"
+	echo -e "1.Ascending \n2.Descending"
+	read choice
 
 
-#calling a function from " exit.sh" file
-exit_program fibonacci.sh
+	if [ $choice -eq 1 ]
+	then
+		echo "[OUTPUT]Ascending Order [OUTPUT]"
+		echo ${inputValue[@]}
+		exit_program sort.sh
+	elif [ $choice -eq 2 ]
+	then 
+		declare -a reverse=()
+		echo "[OUTPUT]Descending Order[OUTPUT]"
+		for((i="${#inputValue[@]}"; i>=0; i--))
+		do
+			reverse+=(${inputValue[i]})
+		done
+		 echo ${reverse[@]}
+		exit_program sort.sh
+	else
+		echo "[ERROR]Invalid Choice[ERROR]"
+		exit_program sort.sh
+	fi
+
+
 else
+	echo "[ERROR]Please pass more than one argument to perform sort operation"
+#calling a function from " exit.sh" file
+	exit_program sort.sh
 
-	echo "[Error]Please Enter a Valid Input to calculate fibonacci of Number[Error]"
-	exit_program fibonacci.sh
 fi
-
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #----------------------------------------------------------End of the Program-------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------

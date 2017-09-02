@@ -1,9 +1,13 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------Expected Solution-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
+#This Program performes fibonacci operation(i.e, adds last two number to find third number) "if a[0]=0 a[1]=1 then a[2] should have 0+1=1 as content". 
+
+
 <<ExpectedInput
 
-
+	Example:	Enter the value of N
+			5
 
 
 
@@ -11,7 +15,8 @@ ExpectedInput
 
 <<ExpectedOutput
 
-
+	Example:	fibonacci Series of an Given Number:
+			0 1 1 2 3 5
 
 
 ExpectedOutput
@@ -26,33 +31,43 @@ ExpectedOutput
 #import the exit.sh file to perform exit operation
 source exit.sh
 
-echo "[INPUT]Enter the value[INPUT]"
-read value
+#read the number from the user and perform Fibonacci series operation
+echo "[INPUT]Enter the value of N[INPUT]"
+read n
+
+if [ $n -gt 0 ]
+then
+
+	declare -a array=( 0 1 )
 
 
-declare -a inputArray=("$value")
-echo "value is $inputArray"
-countOfOperant=${#inputArray["$@"]}
-echo "count of  operant is $countOfOperant"
-echo "1st value ${inputArray[0]}"
-operant=${inputArray[$countOfOperant-1]}
-echo "operant $operant"
+	echo "[OUTPUT]Fibonacci Series of Given Number $n is [OUTPUT]"
+	echo -ne "${array[0]}\t";
+	echo -ne "${array[1]}\t";
 
-sum=0
 
-<<comme
-case "$operant" in
-	"+")	;;
-	"-")	;;
-	"*")	;;
-	"/")	;;
-	"%")	;;
-	  *)	echo "[ERROR]invalid operant[ERROR]"
-esac
-comme
+	for((i=2;i<=n;i++))
+	do
+		
+		array[i]=$((${array[i-2]}+${array[i-1]}))
+		if [ ${array[i]} -lt $n ]
+		then
+			count=$i
+			echo -ne  "${array[i]}\t"
+		
+		else
+			echo -e "\n\n\nlargest of given fibonacci series is:${array[$count]}\n\n"			
+			exit_program fibonacci.sh
+		fi
+	done
 
-#calling a function from " exit.sh" file
-exit_program arithematicOnOperation.sh
+else
+	echo "[Error]Invalid Input[Error]"
+	exit_program fibonacci.sh
+
+fi
+
+
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------
 #----------------------------------------------------------End of the Program-------------------------------------------------------------------------------
