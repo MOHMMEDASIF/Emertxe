@@ -28,7 +28,7 @@ then
 		clear
 		echo -e "\n\n\n\t\t\t**********\tThis program has stopped executing as per your input\t**********\t\t\t"
 	
-		echo -e "\t\t\t\t**********\tThank you for using Shell Scripting\t**********\t\t\t"
+		echo -e "\t\t\t\t**********\tThank you for using Shell Scripting\t**********\t\t\t\n\n\n\n\n"
 		exit
 		
 	else
