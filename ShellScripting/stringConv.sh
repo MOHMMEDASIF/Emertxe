@@ -34,12 +34,15 @@ ExpectedOutput
 #import the exit.sh file to perform exit operation
 source exit.sh
 
+#validates the user to pass an arguments
 if [ $# -eq 1 ]
 then
-echo -e "\n[INPUT]\tPlease Select an option\t[INPUT]\n\t1.TO_UPPER_CASE\n\t2.to_lower_case"
-read userOption
 
+#reads the users option
+	echo -e "\n[INPUT]\tPlease Select an option\t[INPUT]\n\t1.TO_UPPER_CASE\n\t2.to_lower_case"
+	read userOption
 
+#validates the user option using case statements
 case $userOption in
 
 

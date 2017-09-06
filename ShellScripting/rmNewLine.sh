@@ -44,6 +44,7 @@ source exit.sh
 echo "[Content of file $1]"
 cat $1
 
+#pattern Matching and prints it to new-file then moves the same content to output.txt file
 `sed /^$/d $1 > new1.txt && mv new1.txt   output.txt`
 echo "[OutputFile Content]"
 cat output.txt

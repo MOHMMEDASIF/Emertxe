@@ -41,7 +41,7 @@ ExpectedOutput
 source exit.sh
 
 
-
+#prompts the user for the user-option
 echo 	-e		"[INPUT]Select the Option below to Display the Information[INPUT]\n
 			\t1)Currently Logged User\n
 			\t2)Shell Directory\n
@@ -57,23 +57,12 @@ echo 	-e		"[INPUT]Select the Option below to Display the Information[INPUT]\n
 			\t12)Currently running process(uid)\n"
 read userOption
 
-<<comment
-function display()
-{
 
-
-
-
-
-}
-
-comment
-
-
+#validating the user option using case statement
 case "$userOption" in
 
 	1)	echo	-e	"\t[OUTPUT]Currently Logged User[OUTPUT]\n\t`whoami`";;
-	2) 	echo 	-e 	"\t[OUTPUT]Shell Directory[OUTPUT]\n\t `echo $0`";;
+	2) 	echo 	-e 	"\t[OUTPUT]Shell Directory[OUTPUT]\n\t $SHELL";;
 	3) 	echo 	-e	"\t[OUTPUT]Home Directory [OUTPUT]\n\t $HOME";;
 	4)	echo 	-e	"\t[OUTPUT]OS Information[OUTPUT]\n\t 
 					 OS Name :`uname -ov|cut -d '-' -f 2 | cut -d ' ' -f 1`\n\t
@@ -83,7 +72,7 @@ case "$userOption" in
 					 No.of Users:	`users|wc -w`
 					 Users are:	`users`";;
 	7)	echo 	-e	"\t[OUTPUT]Available Shells in System[OUTPUT]\n\n`cat /etc/shells`  ";;
-	8)	echo 	-e	"\t[OUTPUT]Hard-Disk Information[OUTPUT]\n\n `df -h`";;
+	8)	echo 	-e	"\t[OUTPUT]Hard-Disk Information[OUTPUT]\n\n `lshw`";;
 	9)	echo 	-e	"\t[OUTPUT]CPU-Information[OUTPUT]\n\n `df -h`";;
 	10)	echo 	-e	"\t[OUTPUT]Memory Information[OUTPUT]\n\n\n `du -a`";;
 	11)	echo 	-e	"\t[OUTPUT]File-System Information[OUTPUT]\n\n`du -a`";;

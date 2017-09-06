@@ -45,9 +45,10 @@ ExpectedOutput
 source exit.sh
 
 
-
+#validating the arguments 
 if [ $# -eq 3 ]
 then
+#validating the arg1 and arg2 to be numbers
 	if [ $1 -gt 0 -a $2 -gt 0 ]	
 	then
 		headCount=$(($1+$2))
@@ -61,7 +62,7 @@ then
 
 else
 	echo "[ERROR]Please Pass an argument to perform an Operation[ERROR]"
-	#calling a function from " exit.sh" file
+#calling a function from " exit.sh" file
 	exit_program printLines.sh
 
 fi

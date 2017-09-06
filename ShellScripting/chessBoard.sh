@@ -33,7 +33,7 @@ source exit.sh
 echo "[Input]Enter the value[Input]"
 read value
 
-
+#calculates the sum 0f both row and col 
 for((row=1;row<=value;row++))
 do
 	for((col=1;col<=value;col++))
@@ -43,10 +43,8 @@ do
 	if [ $sumOfRowAndCol -eq 0 ]
 	then
 		echo -e -n "\033[47m"   " "	
-#		echo -en  "*\t"
 	else
 		echo -e -n "\033[40m"   " "
-#		echo -en "#\t"
 	fi
 	
 	done

@@ -32,12 +32,13 @@ ExpectedOutput
 #import the exit.sh file to perform exit operation
 source exit.sh
 
+#validates the arguments
 if [ $# -gt 2 ] 
 then
 	declare -a inputValue=("$@")
 	echo "inputcount : ${#inputValue[@]}"
 	echo "content of inputValue ${inputValue[@]}"
-	
+#compares the first value with n-numbers of values till it reaches its proper index
 	for((j=0; j<=${#inputValue[@]}; j++))
 	do
 		for((i=$(($j+1)); i<${#inputValue[@]}; i++))
@@ -52,11 +53,12 @@ then
 		done
 
 	done
+#prompts the user for user-option
 	echo "[Input]Enter your choice[Input]"
 	echo -e "1.Ascending \n2.Descending"
 	read choice
 
-
+#validates the user-choices
 	if [ $choice -eq 1 ]
 	then
 		echo "[OUTPUT]Ascending Order [OUTPUT]"
