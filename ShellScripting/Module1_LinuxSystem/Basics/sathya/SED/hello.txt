@@ -1,0 +1,1 @@
+     5	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 14:23 sample.sh

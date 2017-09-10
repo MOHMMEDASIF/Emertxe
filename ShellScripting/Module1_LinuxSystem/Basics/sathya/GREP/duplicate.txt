@@ -1,0 +1,9 @@
+     1	total 4
+     2	-rwxrwxrwx 1 emertxe emertxe    0 Aug 29 14:23 sample.c
+     3	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 14:24 sample.cpp
+     4	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 14:24 sample.java
+     5	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 14:23 sample.sh
+     6	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 14:48 SAMPLE.sh
+     7	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 15:16 sample.tx
+     8	-rw-rw-r-- 1 emertxe emertxe    0 Aug 29 15:03 Test
+     9	drwxrwxr-x 2 emertxe emertxe 4096 Aug 29 15:03 Test1
