@@ -1,0 +1,5 @@
+Which software is not an file compression utility ?
+ [A] 7-Zip
+ [B] Win-Rar
+ [C] Win-Zap
+ [D] Compres

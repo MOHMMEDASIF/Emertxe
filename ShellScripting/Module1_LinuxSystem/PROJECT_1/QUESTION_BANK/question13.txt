@@ -1,0 +1,5 @@
+In which situation running applications of an user account remains active ?
+ [A] When we Log-Off
+ [B] When we Switch user
+ [C] When we Shut Down
+ [D] When We Reboot

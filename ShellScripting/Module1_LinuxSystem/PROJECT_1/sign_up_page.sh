@@ -16,7 +16,7 @@ source color.sh
 
 
 #screen head
-echo -e "$yellow Welcome to SIGN-UP page of [Test-Software] $normal"
+echo -e "\n$yellow Welcome to SIGN-UP page of [Test-Software] $normal"
 echo -e "$blue$bold             Enter The Details              $normal\n"
 
 #prompt the user for user_name
@@ -70,8 +70,18 @@ then
 #validates the modile-number for 10-digits or throw an error
 					if [[ $mobile_no =~ [0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+ ]]
 					then
-						echo -n "[Place]:"
-						read place
+						echo -n "[DOB(dd/mm/yyyy)]:"
+						read DOB
+#validates the Date of Birth of the User else throw an error
+						if [[ $DOB =~ ^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$  ]]
+						then
+							echo -n "[Place]:"
+							read place
+						else
+
+							echo -e "$red[ERROR]$normal Invalid Date try again with \"dd/mm/yyyy\" $red[ERROR]$noraml"
+							bash sign_up_page.sh
+						fi
 					else
 						echo -e "\n$red[ERROR]$normal Enter the valid Phone-Number $red[ERROR]$normal\n"
 						bash sign_up_page.sh			
@@ -104,7 +114,7 @@ else
 fi
 
 #passes all the fields to user_database.csv file
-echo "$user_name;$user_password;$email_id;$mobile_no;$place;" >> user_database.csv  
+echo "$user_name;$user_password;$email_id;$mobile_no;$DOB;$place;" >> user_database.csv  
 bash sign_in_page.sh
 
 

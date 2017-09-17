@@ -1,0 +1,5 @@
+Computer Monitor is also known as:
+ [A] DVU
+ [B] UVD
+ [C] VDU
+ [D] CCTV

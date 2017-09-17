@@ -1,0 +1,5 @@
+The printed output from a computer is called ?
+ [A] Copy
+ [B] Soft-Copy
+ [C] Hard-Copy
+ [D] Paper

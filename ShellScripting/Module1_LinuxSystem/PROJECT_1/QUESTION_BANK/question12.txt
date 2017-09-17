@@ -1,0 +1,5 @@
+From where we can change the name of an user account ?
+ [A] Settings
+ [B] Computer Name
+ [C] Code Panel
+ [D] Control Panel

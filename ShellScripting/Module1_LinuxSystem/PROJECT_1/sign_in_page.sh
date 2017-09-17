@@ -35,6 +35,9 @@ then
 	user_database_line_count=(`cat user_database.csv | wc -l`)
 	password_field=(`cat user_database.csv | cut -d ';' -f 2`)
 	email_id_field=(`cat user_database.csv | cut -d ';' -f 3`)
+	mobile_number_field=(`cat user_database.csv | cut -d ';' -f 4`)
+	dob_field=(`cat user_database.csv | cut -d ';' -f 5`)
+	place_field=(`cat user_database.csv | cut -d ';' -f 6`)
 	user_name_database=(`cat user_database.csv | cut -d ';' -f 1`)
 	echo ${user_name_from_database[@]}
 
@@ -55,7 +58,7 @@ then
 #does goes to the test_screen if user is logged in sccessfully else prints the error
 	if [ $flag -eq 0 ]
 	then
-		bash test_screen.sh  ${user_name_database[$index]}
+		bash profile_page.sh  ${user_name_database[$index]}  ${email_id_field[$index]} ${mobile_number_field[$index]} ${dob_field[$index]} ${place_field[$index]} $index
 
 	else
 		echo -e "\n$red$bold[ERROR]$normal Oops!! Incorrect Sign-In Details $red$bold[ERROR]$normal "

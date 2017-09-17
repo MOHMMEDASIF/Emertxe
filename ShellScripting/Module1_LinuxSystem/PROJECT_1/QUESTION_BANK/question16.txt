@@ -1,0 +1,5 @@
+Which one is an example of spreedsheet software ?
+ [A] MS-Excel
+ [B] MS-Word
+ [C] MS-Access
+ [D] MS-PowerPoint

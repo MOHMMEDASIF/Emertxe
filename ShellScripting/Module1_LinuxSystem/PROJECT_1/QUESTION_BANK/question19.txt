@@ -1,0 +1,5 @@
+Which Software can be used for giving presentation(e.g. product demo) :
+ [A] MS Word
+ [B] MS Excel 
+ [C] MS PowerPoint
+ [D] MS Access

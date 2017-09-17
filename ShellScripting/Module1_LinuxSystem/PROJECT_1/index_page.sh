@@ -34,7 +34,7 @@ case $input_user_index in
   	echo -e "\n\n\n\t\t\t\t**********\t$yellow This program has stopped executing as per your input $normal\t**********\t\t\t"
    	echo -e "\n\t\t\t\t\t**********\t $yellow Thank you for using [Test-Software] $normal \t**********\t\t\t\n"	
 	exit	;;
-*) 	echo -e "$red[ERROR]$normal Invalid Option $red[ERROR]$normal"
+*)	echo -en "$red[ERROR]$normal Invalid Option $red[ERROR]$normal"
 	exit_program index_page.sh	;;
 esac
 

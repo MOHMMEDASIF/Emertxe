@@ -1,0 +1,5 @@
+The extension of a text file (i.e Notepad file)is :
+ [A] .text
+ [B] .tet
+ [C] .txt
+ [D] .tft

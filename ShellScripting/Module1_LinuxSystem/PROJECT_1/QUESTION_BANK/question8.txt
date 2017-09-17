@@ -1,0 +1,5 @@
+Which one is the result of the output given by a computer ?
+ [A] Data
+ [B] Instruction
+ [C] Information
+ [D] Execusion

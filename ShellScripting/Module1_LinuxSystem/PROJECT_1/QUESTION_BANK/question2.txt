@@ -1,0 +1,5 @@
+Identify the device through which data and instruction are entered into a computer:
+ [A] Software
+ [B] Output device
+ [C] Input device
+ [D] Memory

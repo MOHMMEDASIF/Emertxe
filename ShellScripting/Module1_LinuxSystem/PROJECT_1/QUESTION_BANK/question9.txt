@@ -1,0 +1,5 @@
+Which one of these also Known as read/write memory ?
+ [A] ROM
+ [B] RAM
+ [C] DVD
+ [D] Hard-disk

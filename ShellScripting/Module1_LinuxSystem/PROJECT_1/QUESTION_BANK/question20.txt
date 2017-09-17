@@ -1,0 +1,5 @@
+The Proces of erasing a disk is called :
+ [A] Wiping
+ [B] Formatting
+ [C] Cleaning
+ [D] Defragmenting

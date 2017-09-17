@@ -1,0 +1,5 @@
+The output shown on the computer monitor is called ?
+ [A] VDU
+ [B] Hard-Copy
+ [C] Soft-Copy
+ [D] Screen-Copy

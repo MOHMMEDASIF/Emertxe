@@ -1,0 +1,5 @@
+How can we Bring 'My computer' icon on the desktop if it is not there ?
+ [A] From Wallpaper
+ [B] From Settings
+ [C] From Display Properties
+ [D] From Explorer

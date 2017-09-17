@@ -1,0 +1,5 @@
+Eight Bits make-up a ?
+ [A] Byte
+ [B] Megabyte
+ [C] Kilobyte
+ [D] None

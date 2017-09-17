@@ -1,0 +1,5 @@
+Name of the Screen that recognizes touch-input is:
+ [A] Recog Screen
+ [B] Point Screen
+ [C] Touch Screen
+ [D] Android Screen	

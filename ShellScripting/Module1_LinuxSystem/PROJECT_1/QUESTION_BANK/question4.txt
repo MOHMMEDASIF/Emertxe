@@ -1,0 +1,5 @@
+Arrange in ascending order the units of Memory TB,KB,GB,MB
+ [A] TB>MB>GB>KB
+ [B] MB>GB>TB>KB
+ [C] TB>GB>MB>KB
+ [D] GB>MB>KB>TB

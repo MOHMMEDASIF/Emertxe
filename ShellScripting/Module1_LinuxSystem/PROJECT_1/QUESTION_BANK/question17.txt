@@ -1,0 +1,5 @@
+Internet Explorer is used for:
+ [A] Viewing Movie
+ [B] Listning Music
+ [C] Viewing Web Pages
+ [D] Drawing
