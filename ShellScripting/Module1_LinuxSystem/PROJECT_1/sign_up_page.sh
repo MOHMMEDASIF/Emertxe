@@ -16,8 +16,15 @@ source color.sh
 
 
 #screen head
-echo -e "\n$yellow Welcome to SIGN-UP page of [Test-Software] $normal"
-echo -e "$blue$bold             Enter The Details              $normal\n"
+ echo -e "\n$green$bold                Welcome to SIGN-UP  [Test-Software]                       $normal"
+ echo -e "$blue$bold                     Test Your Knowledge                                  $normal"
+ echo -e "$green                                                                          $normal"
+ echo -e "$green                                                                          $normal"
+
+
+
+
+
 
 #prompt the user for user_name
 echo -ne  "[Name]:"
@@ -78,43 +85,50 @@ then
 							echo -n "[Place]:"
 							read place
 						else
-
+							clear
 							echo -e "$red[ERROR]$normal Invalid Date try again with \"dd/mm/yyyy\" $red[ERROR]$noraml"
 							bash sign_up_page.sh
 						fi
 					else
+						clear	
 						echo -e "\n$red[ERROR]$normal Enter the valid Phone-Number $red[ERROR]$normal\n"
 						bash sign_up_page.sh			
 					fi	
 
 
 				else
+					clear	
 					echo -e "\n$red[ERROR]$normal Enter the valid email-id $red[ERROR]$normal\n"
 					bash sign_up_page.sh
 				fi
 			else
+				clear
 				echo -e "\n$red[ERROR]$normal Mismatching Password $red[ERROR]$normal\n\n"
 				bash sign_up_page.sh
 			fi
 	
 		else
+			clear
 			echo -e "\n$red[ERROR]$normal Password Should have atleast 8-alphaNumberic Charcters $red[ERROR]$normal\n\n"
 			bash sign_up_page.sh
 		fi
 
 	else
+		clear
 		echo -e "\n$red[ERROR]$normal Password Should be atleast 8 alpha-numeric characters $red[ERROR]$normal\n"
 		bash sign_up_page.sh
 	fi
 		
 
 else
+	clear
 	echo -e "\n$red[ERROR]$normal User-Name  is Already Present $red[ERROR]$normal\n"
 	bash sign_up_page.sh
 fi
 
 #passes all the fields to user_database.csv file
 echo "$user_name;$user_password;$email_id;$mobile_no;$DOB;$place;" >> user_database.csv  
+clear
 bash sign_in_page.sh
 
 

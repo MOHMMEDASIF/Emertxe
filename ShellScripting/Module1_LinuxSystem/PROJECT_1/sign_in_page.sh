@@ -15,8 +15,10 @@ source exit.sh
 
 #welcome heading
 flag=0
-echo -e "\n$yellow Welcome to SIGN-IN [Test-Software]$normal"
-echo -e "$blue$bold     Enter E-mail and Password     $normal\n"
+	echo -e "\n$green$bold                Welcome to SIGN-IN  [Test-Software]                       $normal"
+	echo -e "$blue$bold                     Test Your Knowledge                                  $normal"
+        echo -e "$green                                                                          $normal"
+        echo -e "$green                                                                          $normal"
 
 #prompt the user for the email-id if existing user
 echo -en "[E-mail]:"
@@ -26,6 +28,8 @@ read sign_in_email
 echo -en "[Password]:"
 read -s sign_in_password
 
+        echo -e "\n$green                                                                          $normal"
+        echo -e "$green                                                                          $normal"
 #if the input is blank then Thrown an error asking the user to pass an valid entry 
 if [[ $sign_in_email =~  ^[[:punct:][:alnum:]]+$  ]]
 then
@@ -47,6 +51,7 @@ then
 		if [ ${email_id_field[i]} == $sign_in_email -a   ${password_field[i]}  == $sign_in_password   ]
 		then	
 			flag=0; index=$i
+			echo  "index:$index"
 			break
 		else
 			flag=1
@@ -58,15 +63,18 @@ then
 #does goes to the test_screen if user is logged in sccessfully else prints the error
 	if [ $flag -eq 0 ]
 	then
+		clear
 		bash profile_page.sh  ${user_name_database[$index]}  ${email_id_field[$index]} ${mobile_number_field[$index]} ${dob_field[$index]} ${place_field[$index]} $index
 
 	else
+		clear
 		echo -e "\n$red$bold[ERROR]$normal Oops!! Incorrect Sign-In Details $red$bold[ERROR]$normal "
 		echo -e "Existing User$bold[sign-in]$normal\tNew User$bold[sign-up]$normal"
 		bash index_page.sh
 	fi
 
 else
+	clear
 	echo -e "\n$red[ERROR]$normal Enter input to login $red[ERROR]$normal"
 fi
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -21,7 +21,7 @@ then
 	echo -e "\n$green$bold                       [SuccessFull Logged-IN]                            $normal"
 	echo -e "$bold$blue                              INSTRUCTION                                 $normal"
 	echo -e "$green                                                                          $normal"
-	echo -en "$green                                                           $rg_red Hello  $normal"
+	echo -en "$green                                                         $rg_red Welcome  $normal"
 	echo -en "$bold $1$normal\n"
 	echo -e "$green                                                                          $normal"
 	echo -e "$green                                                                          $normal"
@@ -42,17 +42,20 @@ then
 #validates the choice
 	case $test_input in
 
-	"Y")	 bash test.sh $1 $2 $3 $4 $5 $6;;
+	"Y")	 clear
+		 bash test.sh $1 $2 $3 $4 $5 $6;;
 	"N")	 clear
 		 bash profile_page.sh $1 $2 $3 $4 $5 $6
 	 	 exit	;;
-	*)	 echo -e "\n\n$red[ERROR]$normal Invalid Input $red[ERROR]$normal\n\n"
+	*)	 clear
+		 echo -e "\n\n$red[ERROR]$normal Invalid Input $red[ERROR]$normal\n\n"
 		 bash test_screen.sh  $1 $2 $3 $4 $5 $6;;
 
 	esac 
 else
+	clear
 	echo -e "\n\n$red[ERROR]$normal Please Log-In $red[ERROR]$normal\n\n"
-	bash sign_in_page.sh
+	bash index_page.sh
 fi
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
