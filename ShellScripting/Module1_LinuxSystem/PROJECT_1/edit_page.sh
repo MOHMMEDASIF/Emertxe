@@ -68,40 +68,40 @@ case $user_input in
 1)  	echo -en "$bold[Enter the New-Value]:$normal"
 	read  new_entry
         user_name_database=(`cat user_database.csv | cut -d ';' -f 1`)
-	sed  "${index}s/;/ /g" new.txt | sed "${index}s/${user_name_database[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g" > new1.txt && mv new1.txt new.txt
+	sed  "${index}s/;/ /g" user_database.csv | sed "${index}s/${user_name_database[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g" > new1.txt && mv new1.txt user_database.csv
 	success_msg	$1 $2 $3 $4 $5 $6	;;
 
 2) 	echo -en  "$bold[Enter the New-Value]:$normal"
 	read  new_entry
 	email_id_field=(`cat user_database.csv | cut -d ';' -f 3`)
-	sed  "${index}s/;/ /g" new.txt | sed "${index}s/${email_id_field[$index-1]}/$new_entry/g" |sed "${index}s/ /;/g">new1.txt && mv new1.txt new.txt
+	sed  "${index}s/;/ /g" user_database.csv | sed "${index}s/${email_id_field[$index-1]}/$new_entry/g" |sed "${index}s/ /;/g">new1.txt && mv new1.txt user_database.csv
 	success_msg	;;
 
 3)  	echo -en "$bold[Enter the New-Value]:$normal"
 	read  new_entry
 	mobile_number_field=(`cat user_database.csv | cut -d ';' -f 4`)
-	sed  "${index}s/;/ /g" new.txt | sed "${index}s/${mobile_number_field[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g">new1.txt && mv new1.txt new.txt
+	sed  "${index}s/;/ /g" user_database.csv | sed "${index}s/${mobile_number_field[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g">new1.txt && mv new1.txt user_database.csv
 	success_msg	$1 $2 $3 $4 $5 $6	;;
 
 4)  	echo -en "$bold[Enter the New-Value]:$normal"
 	read  new_entry
 	dob_field=(`cat user_database.csv | cut -d ';' -f 5`)
-	sed  "${index}s/;/ /g" new.txt | sed "${index}s/${dob_field[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g">new1.txt && mv new1.txt new.txt
+	sed  "${index}s/;/ /g" user_database.csv | sed "${index}s/${dob_field[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g">new1.txt && mv new1.txt user_database.csv
 	success_msg	$1 $2 $3 $4 $5 $6	;;
 
 5)	echo -en  "$bold[Enter the New-Value]:$normal"
 	read  new_entry
 	place_field=(`cat user_database.csv | cut -d ';' -f 6`)
-	sed  "${index}s/;/ /g" new.txt | sed "${index}s/${place_field[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g">new1.txt && mv new1.txt new.txt
+	sed  "${index}s/;/ /g" user_database.csv | sed "${index}s/${place_field[$index-1]}/$new_entry/g"  |sed "${index}s/ /;/g">new1.txt && mv new1.txt user_database.csv
 	success_msg	$1 $2 $3 $4 $5 $6	;;
 
 *)	clear
- 	echo "$red[ERROR]$normal INVALID CHOICE $red[ERROR]$normal" 
-	bash edit_page.sh 
+ 	echo -en "\n$red[ERROR]$normal INVALID CHOICE $red[ERROR]$normal\n" 
+	bash edit_page.sh $1 $2 $3 $4 $5 $6 
 esac
 
 else
-	echo "Sign-in or Sign-up to edit the informatio"
+	echo -en "Sign-in or Sign-up to edit the information"
 	bash index_page.sh
 fi
 

@@ -14,26 +14,6 @@ source color.sh
 source exit.sh
 #source count_down.sh
 
-function time1()
-{
-
-for((i=30; i>=1; i--))
-do
-
-
-	echo -ne " :$blue$bold[Enter your Option]$normal"
-	echo -ne "                                $rg_green[$normal$bold$i$normal$rg_green]Seconds-Remaining$normal\033[0K\r"
-	
-
-	sleep 1
-
-done
-
-
-}
-
-
-
 #This Fuction prints the test_result taken by the user
 function test_result()
 {
@@ -152,15 +132,14 @@ then
 	  	echo -e ""
           	echo -e "$green                                                                          $normal"
           	echo -e "$green                                                                          $normal"
+#		count 30 &
 		count=$(($count+1))
-
-		time1 &
+	 	echo -e "\t\t\t\t\t\t     $blue$bold[Enter your Option]$normal:"
 		read -t 30   user_answer
 #validates the user-input with the answer
 		 if [ $user_answer ]
 	 	 then
-			kill $!
-			clear
+#			pkill -f cound_down.sh
 	 		if [ $user_answer == ${evaluation_sheet[${rand[i]}-1]} ]
 	 		then
 				total_marks=$(($total_marks+1))

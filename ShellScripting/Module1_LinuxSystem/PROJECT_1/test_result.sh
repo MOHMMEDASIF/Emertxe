@@ -12,8 +12,10 @@
 #imports the required files
 source color.sh
 
+
+
 #validates for user-info and user-score after the test is taken
-if [ $# -eq 7 ]
+if [ $#  ]
 then
 
 #page-layout
@@ -29,6 +31,7 @@ then
          echo -e "$green                                                                          $normal"
          echo -e "$green$bold   *Enter [Y] to retake the Test                                          $normal"
 	 echo -e "$green$bold   *Enter [N] to go to Profile Page                                       $normal"
+	 echo -e "$green$bold   *Enter [V] to View The Test                                            $normal"
          echo -e "$green                       $normal$blue$bold Congratulations !!!$normal$green                               $normal"
          echo -e "$green                                                                          $normal"
 
@@ -43,6 +46,9 @@ then
 		bash test.sh $1 $2 $3 $4 $5 $6;;
 	"N")	clear
 		bash profile_page.sh $1 $2 $3 $4 $5 $6;;
+	"V")	clear
+		bash view_test.sh $8 $9 $10;;
+	
 	*)	clear
 		echo -e "\n$red[ERROR]$normal INVALID OPTION $red[ERROR]$normal\n\n" 
 		bash test_result.sh $1 $2 $3 $4 $5 $6 $7 ;;

@@ -36,7 +36,7 @@ then
 	echo -e "$green                                                                          $normal"
 
 #prompt the user for the Choice
-	echo -ne "\n[Enter Your Choice{Y/N}]:"
+	echo -ne "$bold[Enter Your Choice(Y/N)]:$normal"
 	read  test_input
 
 #validates the choice

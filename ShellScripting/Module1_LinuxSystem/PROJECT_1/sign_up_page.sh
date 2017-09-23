@@ -29,7 +29,8 @@ source color.sh
 #prompt the user for user_name
 echo -ne  "[Name]:"
 read user_name_from_user
-
+if [ $user_name_from_user ]
+then
 #gets the existing user from the user_database
 flag=1
 user_name_from_database=(`cat user_database.csv | cut -d ';' -f 1`)
@@ -75,7 +76,7 @@ then
 					echo -n "+91-"; read mobile_no
 
 #validates the modile-number for 10-digits or throw an error
-					if [[ $mobile_no =~ [0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+[0-9]+ ]]
+					if [[ $mobile_no =~ ^[0-9]{10}$  ]]
 					then
 						echo -n "[DOB(dd/mm/yyyy)]:"
 						read DOB
@@ -123,6 +124,12 @@ then
 else
 	clear
 	echo -e "\n$red[ERROR]$normal User-Name  is Already Present $red[ERROR]$normal\n"
+	bash sign_up_page.sh
+fi
+
+else
+	clear
+	echo -e "\n$red[ERROR]$normal Please Enter the user_name $red[ERROR]$normal\n"
 	bash sign_up_page.sh
 fi
 
