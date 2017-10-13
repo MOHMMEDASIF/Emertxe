@@ -17,42 +17,33 @@ int main()
 	{ 
 
 		int number, i, j, count = 0;
+
+		//prompt the user for the number
 		printf("Enter the value of limit:");
 		scanf("%d", &number);
 
-/*		//validate for odd or even
-		if (number % 2 )
-		{
-			i = 1;
-			j = 1;
-		}
-		else
-		{
-			i = 0;
-			j = 0; 
-		}
-*/
-
-		//validation for odd or even
+		//validation even or odd
+		//code for the odd
 		if(number % 2)
 		{
 
-		count = 2*number-1;
+		count = number ;
 
-		for (i = 1 ;i <= 2 * number - 1; i++ )
+		for (i = 1  ;i <= number; i++ )
 		{
-			for(j = 1  ;j <= 2 * number - 1; j++ )
+			for(j = 1  ;j <= number; j++)
 			{
-				if(i == j || count == j)
+				if(i == j || j == count)
 				{
-					if (i == number )
+					if (i == number / 2 + 1)
 					{
-						printf("  Hello");
+						printf("  HELLO");
 					}
 					else
 					{
-					printf("Hello");
+						printf("HELLO");
 					}
+
 				}
 				else
 				{
@@ -63,28 +54,41 @@ int main()
 			printf("\n");
 		}
 		}
+
 		//code for even
 		else
 		{
+		count = number ;
 
-		count = 2*number-1;
-
-		for (i = 0 ;i <= 2 * number - 1; i++ )
+		for (i = 1  ;i <= number; i++ )
 		{
-			for(j = 0  ;j <= 2 * number - 1; j++ )
+			for(j = 1  ;j <= number; j++)
 			{
-				if(i == j || count == j)
+				if(i == j || j == count)
 				{
-					printf("Hello");
+					if (i == number / 2 || i == number / 2 + 1)
+					{
+						printf("  HELLO");
+						break;
+
+					}
+					else
+					{
+						printf("HELLO");
+					}
+
 				}
 				else
 				{
 					printf(" ");
 				}
 			}
+			
 			count--;
 			printf("\n");
+
 		}
+
 		}
 
 				

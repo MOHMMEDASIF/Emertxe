@@ -62,7 +62,7 @@ int main()
 
 				if ( sum > number )
 				{
-					if( sum >= -1 * number)
+					if( sum > -1 * number)
 					{
 						break;
 					}
@@ -70,6 +70,10 @@ int main()
 				}
 				else if (sum == number || sum == -1 * number)
 				{
+/*					if( sum >= -1 * number)
+					{
+						break;
+					}*/
 					printf("%d\n", sum);
 					break;
 				}

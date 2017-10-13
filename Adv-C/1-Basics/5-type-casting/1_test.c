@@ -1,0 +1,7 @@
+#include<stdio.h>
+
+int main()
+{
+	float f = 1.0f/2;
+	printf("%f\n", f);
+}
