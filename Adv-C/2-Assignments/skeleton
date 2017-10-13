@@ -16,7 +16,7 @@ int main()
 	do
 	{
 
-		printf("Do you want to continue?[Y/N]:");
+		printf("\nDo you want to continue?[Y/N]:");
 		scanf("\n%c", &option);
 	}while (option == 'Y' || option == 'y');
 
