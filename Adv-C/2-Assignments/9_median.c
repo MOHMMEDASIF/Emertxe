@@ -7,7 +7,7 @@ description	: sort the array first and then carry out following operations
 To get centre value of array if odd, if even calculate the average of the centre vale of array and the another as as same 
 Fianlly calculate avearge of both the array	
 
- ************************************************************************************************************************************************************/
+************************************************************************************************************************************************************/
 
 #include<stdio.h>
 
@@ -29,9 +29,11 @@ int main()
 			//declaration of the array1
 			int array1[limit1];
 
+			printf("Enter the Value of the array1\n");
 			//read the content of the array
 			for(i = 0; i < limit1; i++)
 			{
+				printf("array1[%d]:",i);
 				scanf("%d", &array1[i]);
 
 			}
@@ -87,12 +89,14 @@ int main()
 			//declaration of the array2
 			int array2[limit2];
 
-				//read the content of the array2
-				for(i = 0; i < limit2; i++)
-				{
-					scanf("%d", &array2[i]);
+			printf("Enter the Value of the array2\n");
+			//read the content of the array2
+			for(i = 0; i < limit2; i++)
+			{
+				printf("array2[%d]:", i);
+				scanf("%d", &array2[i]);
 
-				}
+			}
 
 			//sorting the array in ascending order
 			for(i = 0;i < limit2 - 1; i++)
