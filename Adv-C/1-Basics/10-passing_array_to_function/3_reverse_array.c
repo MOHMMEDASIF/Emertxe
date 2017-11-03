@@ -53,9 +53,18 @@ void reverse(int a[], size_t n)
 
 	for (i = 0; i < n; i++)
 	{
+
+				printf("\n\ninteration :%d\n:", i);
 				temp = a[i];
+				printf("interation :%d\t", i);
+				printf("temp :%d\n", temp);
 				a[i] = a[n - 1];
+				printf("interation :%d\t", i);
+				printf("a[%d] :%d\n", i, a[i]);
 				a[n - 1] = temp ;
+				printf("interation :%d\t", i);
+				printf("a[%d] :%d\n", n-1, a[n-1]);
 				n--;
+				printf("End of interation :%d\n\n", i);
 	}
 }

@@ -9,37 +9,36 @@ description	: using main method execution of the factorial method
 
 #include<stdio.h>
 
-int factorial(int number);
-
+//int factorial(int number);
+int flag = 0;
 int main()
 {
 	char option;
 
-	do
-	{
+//	do
+//	{
 		int number, result = 0;
-
-		printf("Enter the NUmber:");
-		scanf("%d", &number);
-
+		
+		if(flag == 0)
+		{
+			printf("Enter the NUmber:");
+			scanf("%d", &number);
+		}
+		flag = 1;
 		if (number > 0)
 		{
-			result = factorial(number);
-
+			result = number * main(number - 1);
+		}
 			printf("Factorial Given Number %d is %d", number, result);
-		}
-		else
-		{
-			puts("Invalid Number..");
-		}
 
-		printf("\nDo you want to continue?[Y/N]:");
-		scanf("\n%c", &option);
-	}while (option == 'Y' || option == 'y');
+//		printf("\nDo you want to continue?[Y/N]:");
+//		scanf("\n%c", &option);
+//	}while (option == 'Y' || option == 'y');
 
 	return 0;
 }
 
+#if 0
 int factorial(int number)
 {
 	if (number == 0 || number == 1)
@@ -48,3 +47,4 @@ int factorial(int number)
 	}
 	return number * factorial(number - 1);
 }
+#endif
