@@ -16,29 +16,29 @@ int main()
 
 	do
 	{
-		char string[100], i, temp;
-		char ch_ptr;
-		int string_length;
+		char temp[100];
+		int count = 0;
+		char ch, ch1 = ' ';
 		int word_count = 0, line_count = 0, char_count = 0;
 
 		puts("Enter the string:");
-		for(i = 0;  ; i++)
+		while((ch = getchar()) != EOF )
 		{
-			scanf("%c", &temp);
-			*(string + i) = '\0';
-			if (temp != EOF )
-		//	{
-		//		break;
-		//	}
-		//	else
+			char_count++;
+			if (ch == '\n')
 			{
-				*(string + i) = temp;
+				line_count++;
 			}
-		}
+			if ((ch >= '!' && ch <= '~') || (ch1 < '!' && ch1 > '~'))
+			{
+			 	word_count++;
+			}
 
-		string_length = strlen(string);
-		printf("%s\t", string);
-		printf("%d\n", string_length);
+			ch1 = ch;
+		}
+		printf("\t%d\t", line_count);
+		printf("%d\t", word_count);
+		printf("%d\t", char_count);
 
 		printf("\nDo you want to continue?[Y/N]:");
 		scanf("\n%c", &option);

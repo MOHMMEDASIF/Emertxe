@@ -29,16 +29,54 @@ description	:     Ist method
 
 #include<stdio.h>
 
+float avg_cal(int *p, int limit);
+
 int main()
 {
 	char option;
 
 	do
 	{
+		int limit, i;
+		
+		//prompt the user for the limit
+		printf("Enter the limit of an array:");
+		scanf("%d", &limit);
+		
+		int array[limit];
+
+		//prompt the user for the array value
+		printf("Enter the Array values:\n");
+		for(i = 0; i < limit; i++)
+		{
+			printf("a[%d]:",i);
+			scanf("%d", array + i);
+
+		}
+
+		//function calling to the calculate the average
+		float average = avg_cal(array, limit);
+
+		//print the avearge value in the terminal
+		printf("\nAverage of given number is: %f\n", average / limit);
 
 		printf("\nDo you want to continue?[Y/N]:");
 		scanf("\n%c", &option);
 	}while (option == 'Y' || option == 'y');
 
 	return 0;
+}
+
+float avg_cal(int *p, int limit)
+{
+	//decalaration of the variables
+	int i;
+	float avg;
+
+	for(i = 0; i < limit; i++)
+	{
+		avg = avg + (*(p + i));
+	}
+
+	return avg;
 }

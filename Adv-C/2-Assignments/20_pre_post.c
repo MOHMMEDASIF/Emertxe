@@ -18,7 +18,7 @@ int main()
 
 	do
 	{
-		int number, user_choice, i;
+		unsigned int number, user_choice, i;
 
 		//prompt the user for the number
 		printf("Enter the Number:");
@@ -54,7 +54,15 @@ int main()
 //function goes to location, increments the actual value by 1 and returns the value to the main function
 int pre_increment(int *number)
 {
-	return ++*number;
+	if (*number % 2 == 0)
+	{
+		return   *number = (*number) |  ((1 << 2) -1)  ;
+	}
+	else
+	{
+		//	return ++*number;
+		return (*number & (~(30 >> 1)) );//(~(1 << 2) - 1 ))| (1 << 1));//shift 31 bits by 1 and inverse it to get last bit 1 and remaining bit as '0'
+	}
 }
 
 //function returns the value present it that particular location and then increments the value by 1
