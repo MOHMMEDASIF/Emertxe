@@ -31,7 +31,7 @@ description	:     Ist method
 
 float avg_cal(int *p, int limit);
 
-int main()
+int main(int argc, char *argv[])
 {
 	char option;
 
