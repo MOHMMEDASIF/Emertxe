@@ -51,7 +51,7 @@ int main()
 
 			case 2:
 				//prompt the user for the string in numberic format
-				printf("Enter the Numberic String:");
+				printf("Enter the Numeric String:");
 				__fpurge(stdin);
 
 				//store the number in string variable

@@ -61,12 +61,23 @@ int pre_increment(int *number)
 	else
 	{
 		//	return ++*number;
-		return (*number & (~(30 >> 1)) );//(~(1 << 2) - 1 ))| (1 << 1));//shift 31 bits by 1 and inverse it to get last bit 1 and remaining bit as '0'
+		return *number = (*number & ~(1)) | (1 << 1);//(~(1 << 2) - 1 ))| (1 << 1));//shift 31 bits by 1 and inverse it to get last bit 1 and remaining bit as '0'
 	}
 }
 
 //function returns the value present it that particular location and then increments the value by 1
 int post_increment(int *number)
 {
-	return (*number)++;
+	int num = *number;
+	if (*number % 2 == 0)
+	{
+
+	   *number = (*number) | 1   ;
+	}
+	else
+	{
+		//	return ++*number;
+		 *number = (*number & ~(1)) | (1 << 1);//(~(1 << 2) - 1 ))| (1 << 1));//shift 31 bits by 1 and inverse it to get last bit 1 and remaining bit as '0'
+	}
+	return num;
 }

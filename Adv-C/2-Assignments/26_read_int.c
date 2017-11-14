@@ -25,7 +25,12 @@ int main()
 		//get the input from the user untill new-line character
 		while((ch_digit = getchar()) != '\n')
 		{
-			if(ch_digit <= '0' && ch_digit >= '9')
+			if(ch_digit == '-')
+			{
+				//rise the flag if the given character has '-'
+				flag = 1;
+			}
+			else if(ch_digit < '0' || ch_digit > '9')
 			{
 				break;
 			}
@@ -35,12 +40,7 @@ int main()
 				ch_digit = ch_digit - 48;
 
 				//add the digits to get an number and store back in result
-				result = result * 10 + (int)ch_digit;
-			}
-			else if(ch_digit == '-')
-			{
-				//rise the flag if the given character has '-'
-				flag = 1;
+				result = result * 10 + ch_digit;
 			}
 			
 		}
@@ -56,7 +56,8 @@ int main()
 		}
 
 		printf("\nDo you want to continue?[Y/N]:");
-		scanf("\n%c", &option);
+		//__fpurge(stdin);
+		scanf(" %c", &option);
 		getchar();
 	}while (option == 'Y' || option == 'y');
 
