@@ -10,6 +10,7 @@ description	: Print the binary form of the floating number
 #include<stdio.h>
 
 void print_bits(int num, size_t n);
+void print_bits_d(int num, size_t n);
 void print_bits_1(int num, size_t n);
 void print_bits_void_ptr(void *p, size_t n);
 
@@ -20,16 +21,23 @@ int main()
 	do
 	{
 		float f;
+		double d;
 		
 		//promt the  user for the floating point number
 		printf("Enter the Floating point Number:");
 		scanf("%f", &f);
+		printf("\nEnter the double Number:");
+		scanf("%lf", &d);
 
 		//type cast the address pointer to int 
 		int *p = (int *)&f;
+		int *q = (int *)&d;
 
 		//pass the address pointer of type int to print the value of the bit and the sizeof the value
 		print_bits(*p, sizeof(float) * 8);
+		
+		puts("");
+		print_bits_d(*q, sizeof(double) * 8);
 
 		puts("");
 
@@ -60,6 +68,15 @@ void print_bits_void_ptr(void *p, size_t n)
 
 //function prints as a bits
 void print_bits(int num, size_t n)
+{
+	unsigned int mask;
+
+	for(mask = 1 << ((sizeof(int) * 8) - 1); mask; mask >>= 1)
+	{
+		num & mask ? putchar('1'):putchar('0') ;
+	}
+}
+void print_bits_d(int num, size_t n)
 {
 	unsigned int mask;
 

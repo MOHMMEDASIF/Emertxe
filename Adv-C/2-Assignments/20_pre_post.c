@@ -56,7 +56,7 @@ int pre_increment(int *number)
 {
 	if (*number % 2 == 0)
 	{
-		return   *number = (*number) |  ((1 << 2) -1)  ;
+		return   *number = (*number) | 1   ;
 	}
 	else
 	{
