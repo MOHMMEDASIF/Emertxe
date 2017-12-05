@@ -12,6 +12,7 @@ description	: Print the string in the reverse format
 #include <string.h>
 
 void reverse(char *str_ptr,int len);
+int recursive(char *j, size_t i);
 
 int main()
 {
@@ -29,8 +30,13 @@ int main()
 		//get the length of the string including "\n"
 		int len = strlen(string);
 		
-		
+		printf("Entered String is:");
+		recursive(string, len);
+		printf("\n");
+
+		//iterative fuction
 		reverse(string, len);
+
 				
 		printf("Entered String is [%s]", string + 1);
 
@@ -59,4 +65,15 @@ void reverse(char *str_ptr, int len)
 		j--;
 	}
 		
+}
+
+int recursive(char *j, size_t i)
+{
+	if(i == -1)
+	{
+		return 0;
+	}
+	printf("%c", *(j + i));
+	recursive(j, --i);
+
 }

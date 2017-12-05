@@ -71,27 +71,16 @@ void print_array(const float *ptr, int limit)
 
 	//move the minimum value into the temp
 	temp = max;
-	float track = 0.0;
 
 	//check for the number greater then temp and lesser then the maximum
 	for(i = 0; i < limit - 2; i++)
 	{	
-		temp = max;	
+		temp = max;
 		for(j = 0; j < limit ; j++)
 		{
-			if ((*(ptr + j) < temp) && (*(ptr + j) >= min))
+			if ((*(ptr + j) < temp) && (*(ptr + j) > min))
 			{
-				if (*(ptr + j) > min)
-				{
 					temp = *(ptr + j);
-					track = temp;
-				}
-				else if( track == (*(ptr + j)))
-				{
-					printf("%f\n",temp);
-					j++;
-				}
-
 			}
 
 		}

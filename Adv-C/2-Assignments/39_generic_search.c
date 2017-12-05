@@ -10,7 +10,7 @@ description	:Search the key in the array with different datatypes
 #include <stdio.h>
 #include <stdlib.h>
 
-void * generic_search(const void *key, void *base, size_t nmemb, size_t size, int (*comp)(const void *,const void *));
+const void * generic_search(const void *key, void *base, size_t nmemb, size_t size, int (*comp)(const void *,const void *));
 void populate(float *array, int array_size);
 void populate_int(int *array, int array_size);
 void populate_char(char *array, int array_size);
@@ -57,7 +57,7 @@ void populate_double(double *array, int array_size)
 	}
 }
 
-void * generic_search(const void *key,void *base, size_t nmemb, size_t size, int (*comp)(const void *,const void *))
+const void * generic_search(const void *key,void *base, size_t nmemb, size_t size, int (*comp)(const void *,const void *))
 {
 
 	int i;
@@ -121,7 +121,6 @@ int comp_double(const void *a, const void *b)
 int main()
 {
 	char option;
-	int *address;
 	int array_size, user_choice;
 	float key;
 	char key_char;
@@ -150,11 +149,11 @@ int main()
 					
 					//int (*comp)(const void *, const void *) = comp;
 
-					*address = generic_search(&key_char, array_char, array_size, sizeof(char), comp_char); 
+				const	char *address_1 = generic_search(&key_char, array_char, array_size, sizeof(char), comp_char); 
 
-					if (*address)
+					if (*address_1)
 					{
-						printf("\nAddress of the search %p\n", address);
+						printf("\nAddress of the search %p: %c\n", address_1, *address_1);
 					}
 					else
 					{
@@ -174,11 +173,11 @@ int main()
 					
 					//int (*comp)(const void *, const void *) = comp;
 
-					*address = generic_search(&key_int, array_int, array_size, sizeof(int), comp_int); 
+				const	int *address_2 = generic_search(&key_int, array_int, array_size, sizeof(int), comp_int); 
 
-					if (*address)
+					if (*address_2)
 					{
-						printf("\nAddress of the search %p\n", address);
+						printf("\nAddress of the search %p:%d\n", address_2, *address_2);
 					}
 					else
 					{
@@ -198,11 +197,11 @@ int main()
 					
 					//int (*comp)(const void *, const void *) = comp;
 
-					*address = generic_search(&key, array_float, array_size, sizeof(float), comp); 
+					const float *address_3 = generic_search(&key, array_float, array_size, sizeof(float), comp); 
 
-					if (*address)
+					if (*address_3)
 					{
-						printf("\nAddress of the search %p\n", address);
+						printf("\nAddress of the search %p: %f\n", address_3, *address_3);
 					}
 					else
 					{
@@ -222,11 +221,11 @@ int main()
 					
 				//int (*comp)(const void *, const void *) = comp;
 
-					*address = generic_search(&key_double, array_double, array_size, sizeof(double), comp_double); 
+					const double *address_4 = generic_search(&key_double, array_double, array_size, sizeof(double), comp_double); 
 
-					if (*address)
+					if (*address_4)
 					{
-						printf("\nAddress of the search %p\n", address);
+						printf("\nAddress of the search %p: %lf\n", address_4, *address_4);
 					}
 					else
 					{
